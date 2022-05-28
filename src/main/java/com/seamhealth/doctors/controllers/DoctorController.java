@@ -29,12 +29,12 @@ public class DoctorController {
         return doctorService.update(doctorUpdateRequest);
     }
 
-    @GetMapping(path = "get-by-id", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/get-by-id", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Doctor> getById(@RequestParam(defaultValue = "1", name = "id") Long id){
         return doctorService.getById(id);
     }
 
-    @GetMapping(path = "get-all", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/get-all", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Page<Doctor>> getAll(@RequestParam(defaultValue = "0", name = "page") int page,
                                          @RequestParam(defaultValue = "20", name = "record") int record){
         return doctorService.getAll(page, record);
